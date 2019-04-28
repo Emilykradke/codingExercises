@@ -14,5 +14,15 @@ module.exports.run = function(x, y) {
 	const twoDArray = [[0,  4,  2,  1],
 									  [3, -1,  1,  0],
 									  [0,  0,  2,  3],
-									  [1,  3, -3,  0]];
+                    [1,  3, -3,  0]];
+  
+  var sum = 0;
+
+  for (var i=0; i<=y; i++) {
+    for(var j=0; j<=x; j++) {
+      sum += twoDArray[i][j]
+    }
+  }
+  return sum;
+
 };

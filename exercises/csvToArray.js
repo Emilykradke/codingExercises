@@ -14,4 +14,23 @@ module.exports.run = function(csv){
 	Write your code below the comment.
 */
 
+  var csvSplit = csv.split(/\r\n|\n/);
+  var headers = csvSplit[0].split(',');
+  var arr = [];
+
+  for (var i=1; i<csvSplit.length; i++) {
+    var data = csvSplit[i].split(',');
+    var obj = {};
+
+    if (data.length == headers.length) {
+
+      for (var j=0; j<headers.length; j++) {
+        obj [headers[j]] = data[j];
+      }
+      arr.push(obj);
+    }
+
+  }
+  return arr;
+
 };
